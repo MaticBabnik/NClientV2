@@ -268,7 +268,9 @@ public class MainActivity extends BaseActivity
 
     private void hideError() {
         //errorText.setVisibility(View.GONE);
-        if (snackbar != null && snackbar.isShown()) runOnUiThread(() -> snackbar.dismiss());
+        if (snackbar != null && snackbar.isShown()) runOnUiThread(() -> {
+            if (snackbar != null) snackbar.dismiss();
+        });
         snackbar = null;
     }
 
